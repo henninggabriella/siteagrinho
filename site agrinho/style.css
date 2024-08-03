@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.cabecalho {
+    background-color: #DBAE8D;
+    color: white;
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    align-items: center;
+    padding: 5px 20px; /* Reduz o padding para tornar o cabeçalho menor */
+    height: 50px; /* Ajusta a altura do cabeçalho */
+}
+
+.cabecalho-lista {
+    display: flex;
+    list-style: none;
+}
+
+.cabecalho-lista-item {
+    margin: 0 20px; /* Ajusta o espaçamento horizontal entre os itens */
+    font-size: 20px; /* Mantém o tamanho da fonte adequado */
+}
+
+.cabecalho-lista-item a {
+    text-decoration: none; 
+    color: rgb(0, 0, 0);
+}
+
+.escola-imagem {
+    width: 30%;
+}
+
+#escola {
+    background-image: linear-gradient(#DBAB8B, #F2E5D3);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.escola-titulo {
+    padding: 30px 0;
+}
+
+.escola-div-conteudo {
+    width: 45%;
+}
+
+#estudante {
+    padding: 30px 0; /* Ajustado para cima e para baixo */
+}
+
+.calop-1, .calop-2, .calop-3 {
+    width: 230px; /* Largura consistente para todas as imagens */
+}
+
+.estudante-icone {
+    width: 50px;
+    padding: 4px 8px;
+}
+
+.estudante-div {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.estudante-titulo {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.estudante-todos {
+    display: flex; /* Usa flexbox para alinhar horizontalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens envolvam para uma nova linha se necessário */
+}
+
+.rodape {
+    background-color: #DBAB8B;
+    text-align: center;
+    padding: 10px 0;
+}
