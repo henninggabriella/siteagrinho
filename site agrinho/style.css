@@ -1,90 +1,199 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
-}
-
-body {
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-.cabecalho {
-    background-color: #DBAE8D;
-    color: white;
-    display: flex;
-    justify-content: flex-end; /* Alinha os itens à direita */
-    align-items: center;
-    padding: 5px 20px; /* Reduz o padding para tornar o cabeçalho menor */
-    height: 50px; /* Ajusta a altura do cabeçalho */
-}
-
-.cabecalho-lista {
-    display: flex;
     list-style: none;
+    text-decoration: none;
 }
-
-.cabecalho-lista-item {
-    margin: 0 20px; /* Ajusta o espaçamento horizontal entre os itens */
-    font-size: 20px; /* Mantém o tamanho da fonte adequado */
+:root{
+    --red:#d63a25;
+    --white:#fff;
+    --dark:#1e1c2a;
 }
-
-.cabecalho-lista-item a {
-    text-decoration: none; 
-    color: rgb(0, 0, 0);
+body{
+    color: var(--dark);
+    background: var(--white);
 }
-
-.escola-imagem {
-    width: 30%;
-}
-
-#escola {
-    background-image: linear-gradient(#DBAB8B, #F2E5D3);
-    color: rgb(0, 0, 0);
+.navigation{
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
 }
-
-.escola-titulo {
-    padding: 30px 0;
+.navigation .logo{
+    color: var(--red);
+    font-size: 1.7rem;
+    font-weight: 600;
 }
-
-.escola-div-conteudo {
-    width: 45%;
+.logo span{
+    color: var(--dark);
 }
-
-#estudante {
-    padding: 30px 0; /* Ajustado para cima e para baixo */
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
 }
-
-.calop-1, .calop-2, .calop-3 {
-    width: 230px; /* Largura consistente para todas as imagens */
+.navigation ul li a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
 }
-
-.estudante-icone {
-    width: 50px;
-    padding: 4px 8px;
+.navigation ul li a:hover{
+    color: var(--red);
 }
-
-.estudante-div {
-    text-align: center;
-    padding: 16px 0;
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
 }
-
-.estudante-titulo {
-    text-align: center;
-    padding: 10px 0;
+.menu{
+    cursor: pointer;
+    display: none;
 }
-
-.estudante-todos {
-    display: flex; /* Usa flexbox para alinhar horizontalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 20px; /* Adiciona espaçamento entre os itens */
-    flex-wrap: wrap; /* Permite que os itens envolvam para uma nova linha se necessário */
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
 }
-
-.rodape {
-    background-color: #DBAB8B;
-    text-align: center;
-    padding: 10px 0;
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: var(--red);
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+.home-text .text-h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 2rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.home-btn:hover{
+    background: #fc4c35;
+}
+.home-img img{
+    width: 100%;
+}
+@media (max-width:785px) {
+    .navigation{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 15px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+    .home-img{
+        width: 125%;
+    }
+    .navigation ul {
+        display: flex;
+        align-items: center;
+        gap: 3rem; /* Adjusted gap if needed */
+    }
+    
+    .navigation i {
+        display: none; /* Hide the search icon if it still exists in some browsers */
+    }    
+    .logo {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    
+    .logo .red {
+        color: var(--red);
+    }
+    
+    .navigation .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navigation .logo span {
+        color: var(--dark);
+    }
+    
+    /* Aumentar a responsividade para que o logo não quebre o layout */
+    @media (max-width: 785px) {
+        .navigation .logo {
+            font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+        }
+    }
 }
